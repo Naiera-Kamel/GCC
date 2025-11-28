@@ -13,6 +13,50 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    header .back-button {
+      font-size: 20px;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      background: linear-gradient(45deg, #d32769, #2184b9);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    header .back-button:hover {
+      background: linear-gradient(45deg, #ef5576, #0d3c6d);
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header .logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    header .logo h1 {
+      font-size: 24px;
+      color: #0e4d4d;
     }
 
     .content {
@@ -77,14 +121,27 @@
       transform: scale(1.05);
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+    }
+
+    footer p {
+      margin: 5px 0;
+      color: #333;
+    }
   </style>
 </head>
 <body>
 
   <header>
+    <button class="back-button" onclick="goBack()">&#8592;</button>
     <div class="logo">
       <img src="../assets/logo.png" alt="Logo">
-      <h1>GCC Tools</h1>
+      <h1>Payment & Refund</h1>
     </div>
   </header>
 
@@ -96,10 +153,20 @@
 
   <footer>
     <p>Designed Mohammed ma'mon</p>
-    <p>&copy; 2025 GCC Nahdi. All rights reserved.</p>
   </footer>
 
   <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.style.opacity = 1;
+    });
+
+    function goBack() {
+      document.body.style.opacity = 0;
+      setTimeout(() => {
+        window.location.href = "../home.html";
+      }, 500);
+    }
+
     const cardGrid = document.getElementById('cardGrid');
 
     const cardsData = [
