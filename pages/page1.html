@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCC Tools - Page 1</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Card layout */
+    .card-grid {
+      display: flex;
+      justify-content: center; /* Center card horizontally */
+      align-items: center;     /* Center card vertically */
+      height: calc(100vh - 200px); /* Subtract header and footer height */
+    }
+    
+    .card {
+      background-color: #e8f3ee;
+      border-radius: 30px; 
+      padding: 40px 60px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    }
+
+    .card h2 {
+      color: #0e4d4d;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .card button {
+      padding: 15px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #d32769, #2184b9);
+      color: white;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .card button:hover {
+      background: linear-gradient(45deg, #ef5576, #0d3c6d);
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="../assets/logo.png" alt="Logo">
+      <h1>GCC Tools</h1>
+    </div>
+  </header>
+
+  <!-- Background -->
+  <div class="background"></div>
+
+  <!-- Content -->
+  <div class="content">
+    <div class="card-grid">
+      <div class="card">
+        <h2>Pure Cloud</h2>
+        <button onclick="window.open('https://example.com', '_blank')">Open</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Designed Mohammed Ma'mon</p>
+    <p>&copy; 2025 GCC Nahdi. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
