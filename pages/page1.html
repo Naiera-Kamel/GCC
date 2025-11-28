@@ -6,7 +6,17 @@
   <title>GCC Tools - Page 1</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-    /* Header layout */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+      opacity: 0; /* fade-in effect */
+      transition: opacity 0.8s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -49,7 +59,14 @@
       color: #0e4d4d;
     }
 
-    /* Card layout */
+    .content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
     .card-grid {
       display: flex;
       justify-content: center; 
@@ -98,7 +115,6 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 20px;
@@ -114,19 +130,16 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <button class="back-button" onclick="history.back()">&#8592;</button>
+    <button class="back-button" onclick="goBack()">&#8592;</button>
     <div class="logo">
       <img src="../assets/logo.png" alt="Logo">
       <h1>Receive Calls</h1>
     </div>
   </header>
 
-  <!-- Background -->
   <div class="background"></div>
 
-  <!-- Content -->
   <div class="content">
     <div class="card-grid">
       <div class="card">
@@ -136,10 +149,24 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>Designed Mohammed Ma'mon</p>
   </footer>
+
+  <script>
+    // fade-in on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.style.opacity = 1;
+    });
+
+    // go back with fade-out effect
+    function goBack() {
+      document.body.style.opacity = 0;
+      setTimeout(() => {
+        history.back();
+      }, 800);
+    }
+  </script>
 
 </body>
 </html>
